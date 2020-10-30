@@ -1,0 +1,26 @@
+{
+    "entryFile": "src/index.ts",
+    "name": "Apani Dukaan",
+    "noImplicitAdditionalProperties": "throw-on-extras",
+    "controllerPathGlobs": ["src/**/*.controller.ts"],
+    "spec": {
+        "outputDirectory": "tsoa",
+        "specVersion": 3,
+        "securityDefinitions": {
+            "jwt": {
+                "type": "jwt",
+                "name": "jwt",
+                "in": "headers"
+            }
+        },
+        "tsoa_auth": {
+            "type": "oauth2",
+            "authorizationUrl": "http://swagger.io/api/oauth/dialog",
+            "flow": "implicit"
+        }
+    },
+    "routes": {
+        "routesDir": "tsoa",
+        "authenticationModule": "src/middleware/auth.middleware.ts"
+    }
+}
